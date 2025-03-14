@@ -1,21 +1,39 @@
-package com.projetobank.bankapi.model;
+package br.com.fiap.bank_api.model;
 
-import lombok.AllArgsConstructor;
+import jakarta.persistence.*;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import java.time.LocalDate;
 
+@Entity
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class Conta {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String numero;
-    private String agencia;
+
+    @Column(nullable = false, unique = true)
+    private Long numero;
+
+    @Column(nullable = false)
+    private Integer agencia;
+
+    @Column(nullable = false)
     private String nomeTitular;
-    private String cpfTitular;
+
+    @Column(nullable = false, unique = true)
+    private String cpf;
+
+    @Column(nullable = false)
     private LocalDate dataAbertura;
-    private Double saldo;
-    private boolean ativa;
-    private String tipo; // corrente, poupanca ou salario
+
+    @Column(nullable = false)
+    private double saldoInicial;
+
+    @Column(nullable = false)
+    private String ativa = "S";  
+    
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private TipoConta tipo;
 }
