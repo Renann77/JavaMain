@@ -56,7 +56,7 @@ public class ContaController {
             return ResponseEntity.badRequest().body("O saldo inicial não pode ser negativo.");
         }
 
-        conta.setAtiva("S"); // Conta sempre começa ativa com "S"
+        conta.setAtiva("S"); 
 
         log.info("Cadastrando conta número " + conta.getNumero());
         repository.save(conta);
@@ -68,7 +68,7 @@ public class ContaController {
         Optional<Conta> contaOpt = repository.findById(id);
         if (contaOpt.isPresent()) {
             Conta conta = contaOpt.get();
-            conta.setAtiva("N"); // Conta encerrada recebe "N"
+            conta.setAtiva("N"); 
             repository.save(conta);
             return ResponseEntity.ok("Conta encerrada com sucesso.");
         }
