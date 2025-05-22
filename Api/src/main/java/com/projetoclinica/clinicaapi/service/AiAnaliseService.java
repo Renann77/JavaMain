@@ -5,8 +5,8 @@ import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import br.com.fiap.projetoclinica.clinicaapi.model.AppointmentSlot;
-import br.com.fiap.projetoclinica.clinicaapi.repository.AppointmentSlotRepository;
+
+
 
 
 @Service
