@@ -21,6 +21,11 @@
     </parent>
 
     <dependencies>
+        <dependency>
+			<groupId>com.oracle.database.jdbc</groupId>
+			<artifactId>ojdbc11</artifactId>
+			<scope>runtime</scope>
+		</dependency>
 
         <!-- Web -->
         <dependency>
